@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spike Secret Santa 2024 - Lettera di Auguri</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDlkNnh5ZnQ2Z2g4OG1jYm45bXBhN2g1b3ZvNGE0ZmVvN3owNHBydCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/38nsreeZOv7tKexpiL/giphy.gif');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .letter {
+      width: 90vw;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background-color: #fffbea;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: 
+        "title title"
+        "left right"
+        "footer footer";
+      gap: 20px;
+      position: relative;
+      border: 10px solid #8B0000; /* Bordo monocromatico */
+    }
+
+    .title {
+      grid-area: title;
+      font-family: 'Dancing Script', cursive;
+      font-size: 5rem;
+      color: #8B0000;
+      text-align: center;
+    }
+    .left {
+      grid-area: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .message {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #333;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .right {
+      grid-area: right;
+    }
+    .highlight-red {
+      color: #ff0000;
+      font-weight: bold;
+    }
+    .highlight-blue {
+      color: #0037ff;
+      font-weight: bold;
+    }
+    .notice {
+      border: 5px dashed #ff0000;
+      background-color: #fff0f0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+    .footer {
+      grid-area: footer;
+      color: #ff0000;
+      padding: 20px;
+      border-radius: 20px;
+      font-style: italic;
+      text-align: center;
+      justify-self: center;
+      align-self: center;
+      background-color: #fff0f0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border: 2px solid #ff6347;
+    }
+  </style>
+</head>
+<body>
+  <div class="letter">
+    <div class="title">Spike Secret Santa 2024</div>
+	<div class="left">
+      <div class="message" style="text-align: center; margin-top: 40px;">
+        Ho Ho Ho!<br>
+        Ciao <span class="highlight-blue">{santa}</span> !!<br>
+        Sei stato scelto come Spike Secret Santa 🎅 per: <span class="highlight-red">{recipient}</span>! 🎈 <br>
+        Mi raccomando <span class="highlight-red">{recipient}</span> si aspetta un bel 🎁 da te!<br>
+        Il budget a tua disposizione è di 20 euro! 💸<br>
+      </div>
+      <div class="gif-container" style="text-align: center; margin-top: 40px;">
+        <a href="https://www.youtube.com/watch?v=6XCkgXgKBqI" class="social-link">
+          <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYW81bmd4Nmo5cjJkM2N1enFtb21tNDY1bDdmOTdnYm5jdWZtaTU0YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UbKVMEBTOYhP46sVLR/giphy.webp" alt="Toy" style="width: 50%; border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); border: 5px solid #ff0000;">
+        </a>
+        <br><br><br><br>
+        <div class="message" style="font-size: 40px; text-align: center; display: flex; justify-content: center;"> 🎄 🎅 🤶 🦌 🌠 🧦 🎁 ✨ ❄️ 🔔 🦕 🍪 🥛 🦖 🎉 🍬 	</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="notice">
+        <p><span class="highlight-red" style="font-size: 1.3rem;">CONSEGNA REGALI:</span><br>
+          Dal 
+          <span class="highlight-red">{data_inizio_consegna}</span>
+          fino al 
+          <span class="highlight-red">{data_fine_consegna}</span> 
+           sarà disponibile un sacco per raccogliere tutti i regali custodito nel magazzino vicino alle macchinette.<br> Le chiavi saranno con Ylenia.<br><br>
+          Ricorda di scrivere sul pacco <strong>IN GRANDE</strong> il nome <span class="highlight-red">{recipient}</span><br><br>
+          <span class="highlight-red" style="font-size: 1.3rem;">PS:</span> Cerca di consegnare il pacco senza farti notare, usando una busta per mascherare il regalo.
+        </p>
+      </div>
+      <div class="notice">
+        <p><span class="highlight-red" style="font-size: 1.3rem;">SCARTO REGALI:</span><br>
+          Il 
+          <span class="highlight-red">{data_scarto_regali}</span>
+          (aperitivo BOOSTERCLUB) è stato scelto per lo scarto dei regali. <br>
+          Chi non può essere presente potrà ritirarlo nei giorni successivi.<br><br>
+          Se non hai ancora acquistato il regalo, sbrigati e ricorda:<br>
+        <span class="highlight-blue"><i>"Il tempo fa tic tac e i soldi fanno din din" cit.</i></span>
+        </p>
+      </div>
+      <div class="message">
+        <a href="https://www.youtube.com/watch?v=4z6YlM_uwFc" class="social-link"><br>
+          ▶️ A Christmas Carol - Jacob Marley
+        </a>
+      </div>
+      <div class="credits" style="text-align: center; margin-top: 40px; font-size: 1rem; color: #8B0000;">
+        <p><strong>Credits:</strong><br>
+          Ideated by Valerio Bentivenga and Lorenzo Papangelo<br>
+          Designed by Christian Miccolis
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
